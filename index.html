@@ -129,7 +129,10 @@
   .stat-item:last-child { border-right: none; }
   .stat-number { font-family: 'DM Serif Display', serif; font-size: 32px; color: var(--accent); line-height: 1; margin-bottom: 6px; }
   .stat-label { font-size: 12px; color: var(--mid); font-weight: 500; letter-spacing: 0.3px; }
-  .workflow-steps { display: flex; gap: 0; margin: 32px 0; flex-wrap: wrap; justify-content: center; }
+  .workflow-grid { margin: 32px 0; }
+  .workflow-row { display: flex; justify-content: center; align-items: center; }
+  .workflow-row-connector { display: flex; justify-content: center; padding: 8px 0; }
+  .workflow-row-connector .step-arrow { transform: rotate(90deg); }
   .workflow-step { display: flex; align-items: center; gap: 0; }
   .step-box {
     background: white; border: 2px solid var(--accent); border-radius: 10px;
@@ -160,8 +163,8 @@
     .stat-bar { flex-direction: column; }
     .stat-item { border-right: none; border-bottom: 1px solid var(--light); }
     .stat-item:last-child { border-bottom: none; }
-    .workflow-steps { flex-direction: column; align-items: center; }
-    .step-arrow { transform: rotate(90deg); padding: 4px 0; }
+    .workflow-row { flex-direction: column; align-items: center; }
+    .workflow-row .step-arrow { transform: rotate(90deg); padding: 4px 0; }
     .hero { padding: 56px 20px 48px; }
     .article { padding: 36px 20px 60px; }
     .cta-block { padding: 32px 24px; }
@@ -352,13 +355,18 @@
 
   <p>One of the recurring mistakes in the robotics market is treating the robot as the product. In security, the robot is part of the solution. The actual product is a safer, more efficient, better-documented security operation.</p>
 
-  <div class="workflow-steps">
-    <div class="workflow-step"><div class="step-box"><div class="step-num">01</div><div class="step-label">Patrol</div></div><span class="step-arrow">→</span></div>
-    <div class="workflow-step"><div class="step-box"><div class="step-num">02</div><div class="step-label">Detect</div></div><span class="step-arrow">→</span></div>
-    <div class="workflow-step"><div class="step-box"><div class="step-num">03</div><div class="step-label">Verify</div></div><span class="step-arrow">→</span></div>
-    <div class="workflow-step"><div class="step-box"><div class="step-num">04</div><div class="step-label">Escalate</div></div><span class="step-arrow">→</span></div>
-    <div class="workflow-step"><div class="step-box"><div class="step-num">05</div><div class="step-label">Document</div></div><span class="step-arrow">→</span></div>
-    <div class="workflow-step"><div class="step-box" style="border-color: #00875a;"><div class="step-num" style="color: #00875a;">06</div><div class="step-label">Improve</div></div></div>
+  <div class="workflow-grid">
+    <div class="workflow-row">
+      <div class="workflow-step"><div class="step-box"><div class="step-num">01</div><div class="step-label">Patrol</div></div><span class="step-arrow">→</span></div>
+      <div class="workflow-step"><div class="step-box"><div class="step-num">02</div><div class="step-label">Detect</div></div><span class="step-arrow">→</span></div>
+      <div class="workflow-step"><div class="step-box"><div class="step-num">03</div><div class="step-label">Verify</div></div></div>
+    </div>
+    <div class="workflow-row-connector"><span class="step-arrow">↓</span></div>
+    <div class="workflow-row">
+      <div class="workflow-step"><div class="step-box"><div class="step-num">04</div><div class="step-label">Escalate</div></div><span class="step-arrow">→</span></div>
+      <div class="workflow-step"><div class="step-box"><div class="step-num">05</div><div class="step-label">Document</div></div><span class="step-arrow">→</span></div>
+      <div class="workflow-step"><div class="step-box" style="border-color: #00875a;"><div class="step-num" style="color: #00875a;">06</div><div class="step-label">Improve</div></div></div>
+    </div>
   </div>
   <div class="diagram-caption">The value is not just detection. The value is the complete workflow — from patrol through continuous improvement.</div>
 
